@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anomaly Detector : {{ metric }}</title>
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" rel="stylesheet" type="text/css">
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+        {{ script | safe }}
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="refresh" content="15">
+</head>
+<body>
+{% include '_nav.html' %}
+<h1>Anomaly Detector: {{ metric }}</h1>
+<hr>
+<h2>Anomalies</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Observation</th>
+            <th scope="col">Moving Average</th>
+            <th scope="col">Standard Deviation</th>
+            <th scope="col">Z-Score</th>
+            <th scope="col">Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for key in data['obs'].keys() %}
+      <tr>
+      <th scope="row">{{ key }}</th>
+      <td>{{data['obs'][key]}}</td>
+      <td>{{data['mav'][key]}}</td>
+      <td>{{data['mstd'][key]}}</td>
+      <td>{{data['z'][key]}}</td>
+      <td>{{data['timestamp'][key]}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+<h2>Graphs</h2>
+<hr>
+    {{ div | safe }}
+</body>
+</html>
