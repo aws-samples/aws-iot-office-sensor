@@ -239,7 +239,7 @@ The **Result preview** should start populating with values from the data store.
 ### Jupyter Notebook
 From AWS IoT Analytics, you can send the data to a Jupyter notebook for further analysis. AWS Sagemaker serves a Jupyter notebook application. You can import data from your AWS IoT Analytics data sets into a notebook using the [AWS SDK for Python](https://boto3.readthedocs.io/en/latest/).
 
-Check out the example notebook, [OfficeSensor.ipynb](/OfficeSensor.ipynb), for descriptive statistics and plots.
+Check out the example notebook, [OfficeSensor.ipynb](./OfficeSensor.ipynb), for descriptive statistics and plots.
 
 ### Web Application
 You can alternatively use the [web application](../flask/) for visualize and analyze data.
