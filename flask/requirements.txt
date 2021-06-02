@@ -19,5 +19,5 @@ PyYAML==5.4
 s3transfer==0.1.13
 six==1.11.0
 tornado==5.1
-urllib3==1.24.2
+urllib3==1.26.5
 Werkzeug==0.15.3
